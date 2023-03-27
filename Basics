@@ -13,4 +13,13 @@
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-                                            
+->Exection context
+	1.Everything in javascript happens in execution context
+	2.when javascript engine begins start executing there will be two phases 1. Memory Phase 2.Code Phase
+		* 1.Memory Phase : In Memory phase, memory will be allocated only.
+						   a) For variables, Memory will be allocated and undefined value will be assigned to the variables in memory phase.
+						   b) For Functions, Memory will be  allocated and entire function will be assigned to it.
+		* 2.Code Phase : In code phase, real code will start executing 
+						   a) For variables, calculation,etc will be done and real values will be assigned (Like replacing the undefined values for variables in code 								  phase)	
+						   b) For function calls, there will be another execution context will be created and same process will happen like above and when it sees a                                   retunrn statement or end of statement the inner execution context will be deleted and return the control to global execution context
+
