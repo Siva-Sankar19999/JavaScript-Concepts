@@ -1,4 +1,16 @@
 ->Javascript Important concepts about prototype:
                                        https://www.freecodecamp.org/news/a-beginners-guide-to-javascripts-prototype/
-                                       
-                                       
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+->Async, Defer attributes in script tag :
+
+1. when we reload the browser first browser starts parsing the HTML and when it sees any script tag no attributes(async,defer) it will stop parsing and fetch JS file and execute it .Because of this behaviour we place script tag in end of body tag.  
+
+2.Async : while browser parsing the HTML it sees any script tag with async attribute it parallely fecth JS file while parsing and when JS file has completed fetching. then browser stops parsing and execute js file. 
+                                            a) It will be good for google analytics 
+                                            b) when there are js files which are dependent of each other we should not use async attribute
+3.Defer : while browser parsing the HTML it sees any script tag with defer attribute it parallely fecth JS file while parsing and when JS file has completed fetching. then browser will not stop HTML parsing and execute js file after HTML file has completed parsed.
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+                                            
