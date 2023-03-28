@@ -13,7 +13,7 @@
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-->How javascript code is executed ?
+->How javascript code is executed ? https://www.javascripttutorial.net/javascript-execution-context/
 ->Exection context
 	1.Everything in javascript happens in execution context
 	2.when javascript engine begins start executing there will be two phases 1. Memory creation Phase 2.Code execution Phase
