@@ -27,5 +27,22 @@
        *3. For maintainig this execution context there will be stack called CALL STACK OR RUNTIME STACK OR EXECUTION CONTEXT STACK
        
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-       
+->Hoisting in Javascript
+->In terms of general understanding : we can call a function in javascript before Initialization.
+    fun();
+    function fun(){
+    	console.log('Hoisting example');
+    }
+
+->And Hoisting is not like Javascript moves everything up : Because of Execution context phase ,For Functions, Memory will be  allocated and entire function will be assigned
+  to it and For variables, Memory will be allocated and undefined value will be assigned to the variables in memory phase  
+->Because of above behaviour we can call a function,variables in javascriot before it is initialized.
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+->udefined vs not defined
+
+->undefined is a special value provided by JS engine and we should not give this undefined values to any variable.
+->not defined we get this when there is no memory allocated to it .
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
