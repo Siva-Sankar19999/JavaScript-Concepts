@@ -36,7 +36,7 @@
 
 ->And Hoisting is not like Javascript moves everything up : Because of Execution context phase ,For Functions, Memory will be  allocated and entire function will be assigned
   to it and For variables, Memory will be allocated and undefined value will be assigned to the variables in memory phase  
-->Because of above behaviour we can call a function,variables in javascriot before it is initialized.
+->Because of above behaviour we can access a variable (Var) before it is declared and Initialized and can call a function before it is declared.
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 ->udefined vs not defined
@@ -45,4 +45,52 @@
 ->not defined we get this when there is no memory allocated to it .
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+->Lexical Environment and Scope and Scope chain
+
+->scope : Where you can access a specific variable or functionin in the code.
+->Scope chain : First it checks in its local memory and after lexical environment of its parent and and Lexical environment of its parents parent etc 
+->Lexical Environment : Local memory + Lexical environment (Where it is physically Present) of its parent
+     eg: function a(){
+          var c=10;
+	  function b(){                      -> b Lexical parent is 'a' because it is physically present in a
+	   console.log(c)                    ->  b lexical environment is local memory of b and its lexical environment of its parent
+	  }
+	  b();
+     }
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+->What is Temporal Deadzone and Let and Const are Hoisted ?
+
+->Let and Const are also hoisted and but these are not attached to global object 
+->Temporal Dead zone is time between variables are hoisted and these are not initialized to some initial value and when we try to access these variables in this time we will get
+  error.
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+->Block scope and shadowing
+->Block : With the help of block we can group statements and where Javascript can only execute one statement we can make it to execute group statements with the 
+          help of block.
+->Block scope : 	  
+	  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
