@@ -67,11 +67,35 @@
   error.
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-->Block scope and shadowing
+->Block scope 
 ->Block : With the help of block we can group statements and where Javascript can only execute one statement we can make it to execute group statements with the 
           help of block.
-->Block scope : 	  
+->Block scope : let and const have block scope and var doesnot have.
 	  
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+->Closures and Explanation
+->closures : 1. Function bundled with its lexical environment(surrounding state) is a closure
+             2. When it will be formed ? Whenever a fucntion is returned function along with its surrounding state (closure) was returned and it still maintains a
+	        reference to its surrounding state.
+
+ -> when there is a inner function in outer function, the inner function remembers its surrounding state(Lexical environment) and forms a closure called
+             'outer'
+	   ->When the inner function is returned from outer function and even though outer function call ended but the inner function still remembers its surrounding
+	     state
+	     
+	   eg: function outer(){
+	        var a=10;
+		function inner(){
+		 console.log(a);
+		 }
+	     //	inner();
+		return inner;
+		}  
+
+             const z=outer();
+	     console.log(z());  ----->It prints 10 even though outer function call ended but inner function still remember its surrounding state. because it forms a 
+	                              closure (function along with its surrounding state was returned).
 
 
 
