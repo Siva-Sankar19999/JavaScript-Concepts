@@ -96,6 +96,7 @@
              const z=outer();
 	     console.log(z());  ----->It prints 10 even though outer function call ended but inner function still remember its surrounding state. because it forms a 
 	                              closure (function along with its surrounding state was returned).
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
 
