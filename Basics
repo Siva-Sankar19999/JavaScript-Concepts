@@ -1,3 +1,76 @@
+polyfill example in medscape
+
+
+/* Last Update: 1/29/2019 by D McCleod
+ * - dispatch event for collapsed ads.
+ */
+/* Last Update: 11/17/2016 by EB */
+/* Previous Update: 6/19/2014 by JS */
+
+/* polyfill for IE */
+(function () {
+
+    if ( typeof window.CustomEvent === "function" ) return false;
+
+    function CustomEvent ( event, params ) {
+        params = params || { bubbles: false, cancelable: false, detail: null };
+        var evt = document.createEvent( 'CustomEvent' );
+        evt.initCustomEvent( event, params.bubbles, params.cancelable, params.detail );
+        return evt;
+    }
+
+    CustomEvent.prototype = window.Event.prototype;
+
+    window.CustomEvent = CustomEvent;
+})();
+
+var elem = window.parent.document.getElementById(window.frameElement.id);
+var elemCont = window.parent.document.getElementById(elem.parentNode.parentNode.id).parentElement;
+var collapseEvent = new CustomEvent('collapse', {
+    detail: {
+        iframe: elem.id,
+        parent: elem.parentNode.parentNode.id
+    }
+});
+
+if (elemCont.className.indexOf("adSpcHolder") !== -1) {
+    elemCont.style.display = "none";
+} else {
+    window.parent.document.getElementById(elem.parentNode.parentNode.id).style.display = "none";
+    window.parent.document.getElementById(elem.parentNode.parentNode.id).className = "blank-ad";
+    console.log(elem.parentNode.parentNode.id);
+    broadcastCollapseEvent();
+}
+
+if(window.parent.pageCurrentURL.indexOf('slideshow') !== -1 && typeof window.parent.slideShow === "object" ){
+    window.parent.slideShow.triggers.removead({track: false});
+}
+
+function broadcastCollapseEvent() {
+    window.parent.dispatchEvent(collapseEvent);
+}
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ->Javascript Important concepts about prototype:
                                        https://www.freecodecamp.org/news/a-beginners-guide-to-javascripts-prototype/
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------
