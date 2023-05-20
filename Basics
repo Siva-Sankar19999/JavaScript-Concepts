@@ -216,5 +216,6 @@ function broadcastCollapseEvent() {
 ->Disadvantages of Closures
   Memory is accumulated because whenever closure is formed and memory will be deallocated only when program expires.
   
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------  
      
   
