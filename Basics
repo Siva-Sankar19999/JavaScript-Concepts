@@ -217,5 +217,29 @@ function broadcastCollapseEvent() {
   Memory is accumulated because whenever closure is formed and memory will be deallocated only when program expires.
   
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------  
-     
+->Functions in Javascript
+ function statement or function declaration : It is normal declaration 
+  eg: function inner(){
+        console.log('Hello World');
+      }
+ function expression : we assign a function(as a value) to a variable 
+  eg: const a=function inner(){
+       console.log('Hello World');
+      }   
+Q)Difference between function declaration and function expression ?
+a) Hoisting
+
+->Anonymous function
+  A function without name is anonymous function and these are used in place where we want to use function as a value
+  eg: const a=function (){}  
+  
+  
+  
+  
+
+
+
+
+
+
   
