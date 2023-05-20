@@ -53,24 +53,6 @@ function broadcastCollapseEvent() {
 ------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ->Javascript Important concepts about prototype:
                                        https://www.freecodecamp.org/news/a-beginners-guide-to-javascripts-prototype/
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -148,8 +130,12 @@ function broadcastCollapseEvent() {
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 ->Closures and Explanation
-->closures : 1. Function bundled with its lexical environment(surrounding state) is a closure
-             2. When it will be formed ? Whenever a fucntion is returned function along with its surrounding state (closure) was returned and it still maintains a
+->closures : (Explanation) Every function in javascript has access to variables and functions in his parent(lexical Env or surrounding). 
+             Eventhough that function is executed in other scope that function still remember its surrounding state.
+             1. A closure is a combination of function and a reference to its surrounding state 
+             1. A function along with a reference to its outer environment forms a closure
+	     1. Function bundled with its lexical environment(surrounding state) is a closure
+             2. When it will be formed ? Whenever a fucntion is returned, function along with its surrounding state (closure) was returned and it still maintains a
 	        reference to its surrounding state.
 
  -> when there is a inner function in outer function, the inner function remembers its surrounding state(Lexical environment) and forms a closure called
@@ -170,25 +156,65 @@ function broadcastCollapseEvent() {
 	     console.log(z());  ----->It prints 10 even though outer function call ended but inner function still remember its surrounding state. because it forms a 
 	                              closure (function along with its surrounding state was returned).
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+->Questions on Closure
+   Q)what if we place var a=10 after inner function and before return like below ?
+     function outer(){
+     	function inner(){
+	  console.log(a);
+	}
+	var a=10;       -----/likw this
+	return inner;
+	}
+     const otFn=outer();
+     otFn();
+     
+   a) It still forms a closure and it doesnot follow any sequence in forming closure .It just forms a closure with its outer environment.
+   
+   Q) What if we pass some argument variable while calling outer(). Does it remember that variable?
+   a) yes ..it remembers that variable it is also part of surrounding environment. 
+     
+     function outer(b){
+       const a=10;
+       function inner(){
+        console.log(a,b);
+       }
+       return inner
+      }
+     cont otFn=outer(10);
+     otFn();
+  
+   Q)What if outer function is present in another nested function will inner still forms a closure with its also?
+   a)yes
+     function outest(){
+        var b=10;
+     	function outer(){
+	  var a=10;  
+	  function inner(){
+	    console.log(a,b)
+	  }
+	  return inner
+	}
+	return outer
+     }
+   
+   Q)Advantages of closures?
+   a) There are many advantages of closures but one good example is Data Hiding and data privacy
+      function make(){
+        var count=0;
+        return function inner(){
+          count=count+1;
+          console.log(count);
+        }
+     } 
+     
+    const a=make();
+    a();
+    a();
+    
+    Now above, we provide some privacy to count variable .It(count variable) can only be accessed by inner function only and make modifications through inner function only. 
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------    
+->Disadvantages of Closures
+  Memory is accumulated because whenever closure is formed and memory will be deallocated only when program expires.
+  
+     
+  
