@@ -240,8 +240,28 @@ a) Hoisting
 ->First Class functions
   The ability of function to be passed as value to another function and return from the function is first class functions
   
-  ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------  
-  ->What is a callback function in javascript
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------  
+->What is a callback function in javascript
+    1. when we pass a function to another function and that passed function is called callback function.
+    2. Because of callback function we can achieve asynchronous programming in javascript [Actually javascript is synchronous and single threaded programming language].
+    Q) why name callback ?
+    a) We gave the responsibility of calling passed function to another function and will be called later.
+    
+     setTimeout(function(){console.log('checking main thread')},5000);
+     function a(){
+     	console.log('print a');
+     }
+     function b(){
+     	console.log('print b');
+     }
+     
+     If javascript is synchronus first we will wait for 5 seconds and execute that callback function.In the mean time(5s) we are bloacking the main thread not doing anything.
+     because of webapi's we are providing asynchronous to JS. In the waiting time we are executing some other code and when the time is up It will execute that independent code in 
+     callback function.Because of callbacks we are doing asynchronous tasks.
+     
+     
+     
+.    
   
   
 
