@@ -231,9 +231,17 @@ a) Hoisting
 
 ->Anonymous function
   A function without name is anonymous function and these are used in place where we want to use function as a value
-  eg: const a=function (){}  
+  eg: const a=function (){} 
+
+->Named function expression
+  eg: var a= function inner(){}
+  There is one gotcha in this named function expression . When we call function like inner() ->it gives error beocz it is not created in outer scope
   
+->First Class functions
+  The ability of function to be passed as value to another function and return from the function is first class functions
   
+  ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------  
+  ->What is a callback function in javascript
   
   
 
