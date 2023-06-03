@@ -259,6 +259,8 @@ a) Hoisting
      because of webapi's we are providing asynchronous to JS. In the waiting time we are executing some other code and when the time is up It will execute that independent code in 
      callback function.Because of callbacks we are doing asynchronous tasks.
      
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------  
+ ->Callback Hell
      
      
 .    
