@@ -1,1 +1,70 @@
+-> This keyword : 
+
+1.Inside a global space :
+    Inside a global space 'this' refers to globalobject and globalobject may be window,global etc
+    depends on where we are running javascript (javascript runtime environment)
+
+2.Inside a function :
+     'This' value inside a function is 'undefined' but because of javascript 'this substitution' it is 
+     globalobject (only in non-strict mode)
+
+    In strict mode this value is 'undefined'
+
+    Note: 'This substitution' - If the value of 'this' value is undefined then it will replaced with
+           globalobject.
+
+3.This keyword value also depends on how the function is called with respective to strict mode
+
+   function a(){
+     console.log(this);
+   }
+
+   a(); -> this value is undefined
+   window.a(); -> this value is window
+
+4.This keyword value inside object method 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   
+
 
