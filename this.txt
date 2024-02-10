@@ -1,0 +1,134 @@
+-> This keyword : 
+
+1.Inside a global space :
+    Inside a global space 'this' refers to globalobject and globalobject may be window,global etc
+    depends on where we are running javascript (javascript runtime environment)
+
+2.Inside a function :
+     'This' value inside a function is 'undefined' but because of javascript 'this substitution' it is 
+     globalobject (only in non-strict mode)
+
+    In strict mode this value is 'undefined'
+
+    Note: 'This substitution' - If the value of 'this' value is undefined then it will replaced with
+           globalobject.
+
+3.This keyword value also depends on how the function is called [with respective to strict mode]
+
+      function a(){
+        console.log(this);
+      }
+
+   a(); -> this value is undefined
+   window.a(); -> this value is window
+
+4.This keyword value inside a object's method 
+   
+   const obj={
+    x:10,
+    a : function(){
+          console.log(this.x);         // output -> 10;
+        }
+    }
+
+  In above this keyword value inside a object's method is object itself 
+
+5.Call, Apply and Bind methods (sharing methods)
+  call,apply and bind methods are used to modify the value of 'this' inside function
+
+  const obj1={
+    name: "Meena",
+    printName : function (){
+      console.log(this.name);     // output : Meena
+    }
+  }
+
+  const obj2={
+    name : "kishore",
+  }
+
+  obj1.printName.call(obj2);      // output : kishore
+
+6.This keyword inside a arrow function
+  Arrow functions don't have this binding and 'this' value will be their enclosing lexical context.
+
+  Lexical Context : Where it is present in the code / accessible
+
+ eg:1 const school={
+    name : "Meena",
+    x : ()=>{
+      console.log(this);   // output : window object
+    }
+  }
+
+  Here, above arrow function is present in school object and school object is accessible in window object
+  then this value is window object
+
+   eg:2 const school={
+    name : "Meena",
+    x : function(){
+      const y =()=>{
+        console.log(this)
+      }
+      y();
+    }
+  }
+
+  Here , above arrow function is present in x method and x method is accessible in school object and
+  this value is school object
+
+7. This keyword inside DOM  
+   This refers to element
+
+
+
+
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   
+
+
