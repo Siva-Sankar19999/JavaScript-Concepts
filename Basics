@@ -256,9 +256,26 @@ a) Hoisting
      }
      
      If javascript is synchronus first we will wait for 5 seconds and execute that callback function.In the mean time(5s) we are bloacking the main thread not doing anything.
-     because of webapi's we are providing asynchronous to JS. In the waiting time we are executing some other code and when the time is up It will execute that independent code in 
+     because of webapi's(setTimeout) and callbacks we are providing asynchronous nature to JS. In the waiting time we are executing some other code and when the time is up It will execute that independent code in 
      callback function.Because of callbacks we are doing asynchronous tasks.
-     
+
+   3. closures demo with callback functions (event handlers)
+
+      document.getElementById('main').addEventListenser('click',function a(){
+	 console.log('Button clicked');	
+      	});
+
+      Here we want to check how many times button is clicked . we can put global variable and do that but tha it is not good  
+      so we have to create closure and check how many times button was clicked.
+
+     function addEvent(){
+     	 let count=0;
+	 document.getElementById('main').addEventListenser('click',function a(){
+         	count=count+1;
+	 	console.log(count,'Button clicked');	
+      	});
+     }
+    addEvent(); 
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------  
  ->Callback Hell
      
