@@ -259,7 +259,7 @@ a) Hoisting
      because of webapi's(setTimeout) and callbacks we are providing asynchronous nature to JS. In the waiting time we are executing some other code and when the time is up It will execute that independent code in 
      callback function.Because of callbacks we are doing asynchronous tasks.
 
-   3. closures demo with callback functions (event handlers)
+   3) closures demo with callback functions (event handlers)
 
       document.getElementById('main').addEventListenser('click',function a(){
 	 console.log('Button clicked');	
@@ -268,14 +268,19 @@ a) Hoisting
       Here we want to check how many times button is clicked . we can put global variable and do that but tha it is not good  
       so we have to create closure and check how many times button was clicked.
 
-     function addEvent(){
-     	 let count=0;
-	 document.getElementById('main').addEventListenser('click',function a(){
-         	count=count+1;
-	 	console.log(count,'Button clicked');	
-      	});
-     }
-    addEvent(); 
+	     function addEvent(){
+	     	 let count=0;
+		 document.getElementById('main').addEventListenser('click',function a(){
+	         	count=count+1;
+		 	console.log(count,'Button clicked');	
+	      	});
+	     }
+	    addEvent(); 
+
+     4) Garbage collection and Remove event listeners 
+       we have to remove eventlisteners at the end because it forms a closure and memory acculmation is more as these callbacks hold that
+       varibles in its lexical scope.
+
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------  
  ->Callback Hell
      
